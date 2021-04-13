@@ -27,7 +27,7 @@
               <p class="post-meta">Posted by <a href="#">Start Bootstrap</a>  on {{post.node.created_at | date('MMM DD, YYYY') }}</p>
               <p>
                 <span v-for="tag in post.node.tags" :key="tag.id">
-                  <a href="">{{tag.title}}</a>&nbsp;&nbsp;
+                  <g-link :to="'/tag/' + tag.id">{{tag.title}}</g-link>&nbsp;&nbsp;
                 </span>
               </p>
             </div>

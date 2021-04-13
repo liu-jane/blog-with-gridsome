@@ -19,7 +19,7 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',
         queryLimit: 1000, // Defaults to 100
-        contentTypes: ['post'],
+        contentTypes: ['post', 'tag'],
       }
     }
   ],
@@ -34,6 +34,12 @@ module.exports = {
       {
         path: '/post/:id',
         component: './src/templates/Post.vue'
+      }
+    ],
+    StrapiTag:[
+      {
+        path: '/tag/:id',
+        component: './src/templates/Tag.vue'
       }
     ],
     Test: [
