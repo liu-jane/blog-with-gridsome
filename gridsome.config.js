@@ -10,7 +10,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'BlogPost',
+        typeName: 'Blog',
         path: './content/blog/**/*.md',
       }
     },
@@ -20,14 +20,27 @@ module.exports = {
         apiURL: 'http://localhost:1337',
         queryLimit: 1000, // Defaults to 100
         contentTypes: ['post'],
-        // singleTypes: ['impressum'],
-        // Possibility to login with a Strapi user,
-        // when content types are not publicly available (optional).
-        // loginData: {
-        //   identifier: '',
-        //   password: ''
-        // }
       }
     }
-  ]
+  ],
+  templates: {
+    Blog:[
+      {
+        path: '/blog/:id',
+        component: './src/templates/Blog.vue'
+      } 
+    ],
+    StrapiPost:[
+      {
+        path: '/post/:id',
+        component: './src/templates/Post.vue'
+      }
+    ],
+    Test: [
+      {
+        path: '/test/:id',
+        component: './src/templates/Test.vue'
+      }
+    ]
+  }
 }
