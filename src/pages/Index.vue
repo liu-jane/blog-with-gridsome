@@ -1,14 +1,14 @@
 <template>
   <Layout>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead"  :style="{ backgroundImage: `url(http://localhost:1337${general.cover.url})` }">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              <h1>{{general.title}}</h1>
+              <span class="subheading">{{general.subtitle}}</span>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
 </template>
 <page-query>
     query ($page: Int){
-      posts: allStrapiPost (perPage: 5, page: $page) @paginate{
+      posts: allPost (perPage: 5, page: $page) @paginate{
         pageInfo {
           totalPages
           currentPage
@@ -63,6 +63,19 @@
             }
           }
         }
+      },
+      # general是单个节点，由于gridsome不持之单个节点，所以查询的时候还是要查询allGeneral
+      allGeneral{
+        edges{
+          node{
+            id,
+            title,
+            subtitle,
+            cover{
+              url
+            }
+          }
+        }
       }
     }
 </page-query>
@@ -71,6 +84,11 @@ import { Pager } from 'gridsome'
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+  computed:{
+    general(){
+      return this.$page.allGeneral.edges[0].node
+    }
   },
   components: {
     Pager
