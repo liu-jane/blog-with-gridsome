@@ -30,7 +30,7 @@
 </template>
 <page-query>
   query($id: ID!){
-    post(id: $id){
+    post: posts(id: $id){
       id,
       title,
       content,
