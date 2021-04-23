@@ -43,12 +43,12 @@ module.exports = {
         path: '/tag/:id',
         component: './src/templates/Tag.vue'
       }
-    ],
-    Test: [
-      {
-        path: '/test/:id',
-        component: './src/templates/Test.vue'
-      }
     ]
+    // Test: [
+    //   {
+    //     path: '/test/:id',
+    //     component: './src/templates/Test.vue'
+    //   }
+    // ]
   }
 }
