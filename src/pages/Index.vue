@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <!-- Page Header -->
-    <header class="masthead"  :style="{ backgroundImage: `url(http://118.31.34.106:1337/${ general.cover.url})` }">
+    <header class="masthead"  :style="{ backgroundImage: `url(http://118.31.34.106:1337${ general.cover.url})` }">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
