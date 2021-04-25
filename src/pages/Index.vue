@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <!-- Page Header -->
-    <header class="masthead"  :style="{ backgroundImage: `url(${process.env.GRIDSOME_API_URL + general.cover.url})` }">
+    <header class="masthead"  :style="{ backgroundImage: `url(${GRIDSOME_API_URL + general.cover.url})` }">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
